@@ -1,0 +1,46 @@
+<section class="modifiercontainer">
+  <h2>Modifier un Incident</h2>
+
+  @if (message()) {
+    <p class="message"> {{message()}} </p>
+  }
+
+  <form (ngSubmit)="enregistrer()">
+
+      <div class="formgroup">
+          <label for="titre">Titre de l'incident</label>
+          <input type="text" name="titre" placeholder="Ex.: Accident de circulation" required
+          [(ngModel)]="titre"
+          (ngModelChange)="titre.set($event)"/>
+        </div>
+
+        <div class="formgroup">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" placeholder="Décrivez l'incident" required
+          [(ngModel)]="description" rows="4"
+          (ngModelChange)="description.set($event)"></textarea>
+        </div>
+
+        <div class="formgroup">
+          <label for="categories">Categories</label>
+          <input type="text" [ngModel]="categories" (ngModelChange)="categories.set($event)" name="categories" required/>
+        </div>
+
+        <div class="formgroup">
+          <label for="type">Type d'incident</label>
+          <select name="type" id="type" required
+           [(ngModel)]="type"
+           (ngModelChange)="type.set($event)">
+           <option value="">Choisir un type</option>
+           <option value="DOMESTIQUE">Domestique</option>
+           <option value="INTER_URBAIN">Inter-urbain</option>
+           </select>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Enregistrer les modifications</button>
+          <button type="button" routerLink="/tableau-bord" class="btnretour">Annuler</button>
+        </div>
+                                  
+  </form>
+</section>

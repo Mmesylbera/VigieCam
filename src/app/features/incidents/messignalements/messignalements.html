@@ -1,0 +1,44 @@
+<section class="messignalements">
+  <header class="pageheader">
+    <div>
+      <h2>Mes Signalements</h2>
+      <p>Consultez et suivez vos signalements.</p>
+    </div>
+
+    <a routerLink="/signaler" class="btncreer"> + Créer un signalement</a>
+  </header>
+
+  @if (mesIncidents().length === 0) {
+    <div  class="messagevide">
+      <h3>Ancun signalement pour le moment</h3>
+      <p>Les signalements que vous créez apparaitront ici.</p>
+      <a routerLink="/signaler">Créez mon premier signalement</a>
+    </div>
+  } @else {
+    <div class="tablecontainer">
+      <table>
+        <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Catégories</th>
+            <th>Date de creation</th>
+            <th>Statut</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (item of mesIncidents(); track item.id) {
+            <tr>
+              <td> {{ item.titre}} </td>
+              <td> {{item.categories}} </td>
+              <td>{{item.datecreation | date:'dd/MM/yyyy'}}</td>
+              <td><span class="statut">{{item.statut}}</span></td>
+              <td><a routerLink="['/incidents', item.id]">Détails</a></td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</section>

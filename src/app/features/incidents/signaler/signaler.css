@@ -1,0 +1,91 @@
+.formcontainer {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #493126;
+}
+.formcontainer h2 {
+  color: #493126;
+  margin-bottom: 8px;
+}
+.formdescription {
+  color: #654536;
+  margin-bottom: 28px;
+}
+.formgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.formgroup label {
+  color: #493126;
+  font-weight: 600;
+}
+.formgroup input,
+.formgroup textarea,
+.formgroup select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #d6c8c0;
+  border-radius: 7px;
+  font: inherit;
+  background: #fff;
+}
+.formgroup input:focus,
+.formgroup textarea:focus,
+.formgroup select:focus {
+  outline: 2px solid #c97945;
+  border-color: #c97945;
+}
+.formmessage {
+  color: #b42318;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.btn {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+
+}
+.btn1{
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 7px;
+  background: #493126;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn1:hover:hover {
+  background: #654536;
+}
+.btn2{
+   width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 7px;
+  background: white;
+  color: #493126;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #493126;
+  border-radius: 50px;
+}
+.btn2:hover {
+  background: #654536;
+  color: white;
+}
+@media (max-width: 600px) {
+  .formcontainer {
+    margin: 20px 12px;
+    padding: 22px;
+  }
+}

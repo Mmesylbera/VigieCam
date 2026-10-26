@@ -1,0 +1,19 @@
+@if (Incident(); as item) {
+  <section>
+    <h2>Details de l'incident</h2>
+    <p><strong>Titre :</strong> {{item.titre}} </p>
+    <p><strong>Description :</strong> {{item.description}} </p>
+    <p><strong>Categorie :</strong> {{item.categories}} </p>
+    <p><strong>Type :</strong> {{item.type}} </p>
+    <p><strong>Statut :</strong> {{item.statut}} </p>
+    @if (item.statut === 'NOUVEAU') {
+      <button [routerLink]="['/incidents', item.id, 'modifier']">Modifier</button>
+      <button type="button" (click)="supprimer(item.id)">Supprimer</button>
+    }
+    <p><strong>Date de creation :</strong> {{item.datecreation | date:'dd/MM/yyyy HH:mm'}} </p>
+
+    <button routerLink="/tableau-bord">Retour au tableau de bord</button>
+  </section>
+} @else {
+  <p>Incident introuvable.</p>
+}

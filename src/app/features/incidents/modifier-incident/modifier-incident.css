@@ -1,0 +1,61 @@
+.modifiercontainer {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.modifiercontainer h2 {
+  margin-bottom: 25px;
+  color: #493126;
+  text-align: center;
+}
+.formgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.formgroup label {
+  font-weight: 600;
+  color: #493126;
+}
+.formgroup input,
+.formgroup textarea,
+.formgroup select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d4c7bd;
+  border-radius: 6px;
+  font: inherit;
+  box-sizing: border-box;
+}
+.formgroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.actions button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #493126;
+  color: white;
+  cursor: pointer;
+}
+.actions .btnretour {
+  background: #654536;
+}
+.message {
+  padding: 12px;
+  margin-bottom: 20px;
+  background: #f5e8df;
+  color: #493126;
+  border-radius: 6px;
+}

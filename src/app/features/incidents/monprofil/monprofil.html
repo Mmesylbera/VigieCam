@@ -1,0 +1,40 @@
+<section class="profilcontainer">
+  <header class="profilheader">
+    <h2>Mon profil</h2>
+    <p>Consultez les informations de votre compte citoyen.</p>
+  </header>
+
+  @if (utilisateur(); as citoyen) {
+    <div class="profilcard">
+      <div class="profilavatar">
+        {{citoyen.nom.charAt(0).toUpperCase()}}
+      </div>
+
+      <h3> {{citoyen.nom}} </h3>
+      <p class="profilrole">Citoyen</p>
+
+      <div class="profilinformations">
+        <div class="information">
+          <span>Nom complet</span>
+          <strong> {{citoyen.nom}} </strong>
+        </div>
+
+        <div class="information">
+          <span>Adresse e-mail</span>
+          <strong> {{citoyen.email}} </strong>
+        </div>
+
+        <div class="information">
+        <span>Role</span>
+        <strong> {{citoyen.role}} </strong>
+      </div>
+    </div>
+
+    <a routerLink="/tableau-bord" class="btnretour">Retour au tableau de bord</a>
+  </div>
+  } @else {
+    <p class="messagevide"> Aucun citoyen connecté. Veuillez vous connectez.</p>
+
+    <a routerLink="/login" class="btnretour">Se connecter</a>
+  }
+</section>
